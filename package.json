@@ -1,5 +1,7 @@
 {
   "name": "cf_project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "heroku": "^7.19.3"
+  }
 }

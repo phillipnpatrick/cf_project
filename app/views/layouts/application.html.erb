@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CF Project</title>
+    <title>Home Knits</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   
     <!-- Bootstrap stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Special+Elite|Life+Savers" rel="stylesheet">
     
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
     <!-- JavaSript for Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  
@@ -26,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top" role="navigation">
       <!-- Brand -->
       <a class="navbar-brand" href="index">
-        <%= image_tag("fractal.jpg", size: "40x40", alt: "") %>
+        <%= image_tag("knits/logo.jpg", size: "40x40", alt: "") %> Home Knits
       </a>
     
       <!-- Toggler/collapsibe Button -->
@@ -37,8 +39,11 @@
       <!-- Navbar links -->
       <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav mr-atuo">
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Products", products_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "About", simple_pages_about_path, class: "nav-link" %>
@@ -58,7 +63,7 @@
     <footer class="footer">
       <div class="my-footer">
         <span class="text-muted">
-          &copy; 2018 Dynamic Math
+          &copy; 2018 Home Knits
         </span>
       </div>
     </footer>

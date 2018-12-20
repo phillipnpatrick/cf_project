@@ -1,0 +1,33 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product {
+    padding-bottom: 50px;
+}
+
+.product-title {
+    color: steelblue;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20pt;
+}
+
+.product-img {
+    padding-bottom: 20px;
+    max-width: 400px;
+    max-height: 600px;
+}
+
+.product-description {
+    color: mediumslateblue;
+    font-family: 'Life Savers', cursive;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.product-text {
+    color: mediumslateblue;
+    font-family: 'Life Savers', cursive;
+    font-size: 14pt;
+    font-weight: bold;
+}

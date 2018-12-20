@@ -1,5 +1,11 @@
 .navbar-brand {
-    text-transform: uppercase;
+    font-family: 'Special Elite', cursive;
+    // text-transform: uppercase;
+}
+
+.nav-link {
+    font-family: 'Special Elite', cursive;
+    font-size: 16pt;
 }
 
 body {
@@ -20,11 +26,6 @@ body {
     padding-bottom: 100px; /* height of footer */
 }
 
-.page-body h1 {
-    color: FireBrick;
-    font-family: Impact, Charcoal, sans-serif;
-}
-
 .text-with-image {
     position: relative;
 }
@@ -35,7 +36,71 @@ body {
     right: 0px;
 }
 
-/**** Contact ***/
+.img-wrap {
+    float: right;
+}
+
+.hdr {
+    color: steelblue !important;
+    font-family: 'Special Elite', cursive !important;
+}
+
+/*** Home (index) ***/
+.hdr-introduction {
+    text-align: center;
+}
+
+.hdr-description {
+    font-family: 'Life Savers', cursive !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+.img-focus {
+    border-radius: 10px;    // rounded edges
+    display: block;         // to help with centering image
+    height: auto;           // adjust height to browswer screen
+    margin-left: auto;      // centering
+    margin-right: auto;     // centering
+    width: 50%;            // adjust width of image
+}
+
+.polaroid {
+    border-radius: 10px;    // rounded edges
+    display: block;       // center horizontally
+    margin-left: auto;    // center horizontally
+    margin-right: auto;   // center horizontally
+    
+    width: 50%;
+    background-color: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+
+.polaroid-container {
+    border-radius: 10px;    // rounded edges
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/*** About ***/
+.about-text p {
+    color: mediumslateblue;
+    font-family: 'Life Savers', cursive;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+/*** Contact ***/
+.contact-text p {
+    color: mediumslateblue;
+    font-family: 'Life Savers', cursive;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
 .section-contact {
   background-image: image-url("contact.jpg"); /* Use image-url vs url when using Rails */
   background-attachment: fixed; /* Reveals image as scrolling */
@@ -47,7 +112,7 @@ body {
 }
 
 .section-contact a {
-  color: FireBrick;
+  color: mediumslateblue;
   transition: color 600ms;
 }
 
@@ -74,6 +139,8 @@ footer {
 
 .my-footer {
     float: right;
+    font-family: 'Special Elite', cursive;
+    font-size: 12pt;
     font-weight: bold;
     margin-right: 25px;
 }
