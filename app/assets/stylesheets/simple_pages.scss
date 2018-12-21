@@ -9,7 +9,9 @@
 }
 
 body {
-    background-color: ivory;
+    // background-color: ivory;
+    // background-color: #BDC8CA;
+    background-color: #D9E2E1;
     height: 100%;
     position: relative;
 }
@@ -46,6 +48,13 @@ body {
 }
 
 /*** Home (index) ***/
+.home {
+    background-image: image-url("snow/forest-during-winter.jpg"); /* Use image-url vs url when using Rails */
+    background-attachment: fixed; /* Reveals image as scrolling */
+    background-size: cover;
+    height: 900px;
+}
+
 .hdr-introduction {
     text-align: center;
 }
@@ -76,6 +85,9 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 40px;
     padding-top: 40px;
+    // opacity: 0.25;
+    
+    // background: rgba(76, 175, 80, 0.1);
 }
 
 .polaroid-container {

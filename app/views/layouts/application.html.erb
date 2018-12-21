@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
   
     <!-- Bootstrap stylesheet -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Special+Elite|Life+Savers" rel="stylesheet">
     
@@ -14,9 +14,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
     <!-- JavaSript for Bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
  
     <!-- For mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,34 +25,38 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top" role="navigation">
-      <!-- Brand -->
-      <a class="navbar-brand" href="index">
-        <%= image_tag("knits/logo.jpg", size: "40x40", alt: "") %> Home Knits
-      </a>
-    
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-        <ul class="navbar-nav mr-atuo">
-          <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Products", products_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "About", simple_pages_about_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Contact", simple_pages_contact_path, class: "nav-link" %>
-          </li> 
-        </ul>
-      </div> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index">
+          <%= image_tag("knits/logo.jpg", size: "40x40", alt: "") %> Home Knits
+        </a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <%= link_to(root_path, class: "nav-link active") do %>
+                  Home <span class="sr-only">(current)</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Products", products_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "About", simple_pages_about_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Contact", simple_pages_contact_path, class: "nav-link" %>
+            </li> 
+          </ul>
+        </div> 
+      </div>
     </nav>
 
     <section class="page-body">
@@ -67,5 +71,6 @@
         </span>
       </div>
     </footer>
+
   </body>
 </html>
