@@ -65,10 +65,36 @@ body {
     text-align: center;
 }
 
+.carousel-img{
+    display: block;     // centering
+    margin-left: auto;  // centering
+    margin-right: auto; // centering
+}
+
+.carousel-indicators {
+    top: 10%;
+}
+
+.carousel-indicators li {
+  background-color: #999; // change color
+  background-color: rgba(70,70,70,.25); 
+  width: 10px;            // change to circles
+  height: 10px;           // change to circles
+  border-radius: 100%;    // change to circles
+}
+
+.carousel-indicators .active {
+  background-color: #444;
+}
+
+.carousel-caption{
+    position: static;
+}
+
 .img-focus {
     border-radius: 10px;    // rounded edges
     display: block;         // to help with centering image
-    height: auto;           // adjust height to browswer screen
+    height: auto;           // adjust height to browser screen
     margin-left: auto;      // centering
     margin-right: auto;     // centering
     width: 50%;            // adjust width of image
