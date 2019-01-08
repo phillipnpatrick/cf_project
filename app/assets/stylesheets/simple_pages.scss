@@ -166,33 +166,53 @@ body {
     font-weight: bold;
 }
 
-.section-contact {
-  background-image: image-url("contact.jpg"); /* Use image-url vs url when using Rails */
-  background-attachment: fixed; /* Reveals image as scrolling */
-  background-size: cover;
-  color: white;
-  height: 500px;
-  padding-left: 500px;
-  padding-top: 30px;
+.img-contact {
+    padding-top: 25px;
 }
 
-.section-contact a {
-  color: mediumslateblue;
-  transition: color 600ms;
+.email-form-space {
+    margin-top: 30px;
 }
 
-.section-contact a:hover {
-  color: blue;
-  text-decoration: none;
+.email-form {
+    display: block;
+    font-family: 'Life Savers', cursive;
 }
 
-.contact-info {
-  display: inline-block;
-  margin-top: 10px;
+.email-form h4 {
+    font-weight: bold;
 }
 
-.contact-info-spacer {
-  margin-top: 5px;
+.email-form-group {
+    width: 100%;
+}
+
+.email-form-label {
+    display: none;
+}
+
+.btn-email-send {
+    border-radius: 9999px;
+    font-weight: bold;
+}
+
+/*** Thank you ***/
+.thankyou-body {
+    margin-top: 20px;
+}
+
+.thankyou-body h4 {
+    color: mediumslateblue;
+    font-family: 'Life Savers', cursive;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.thankyou-body p {
+    color: mediumslateblue;
+    font-family: 'Life Savers', cursive;
+    font-size: 14pt;
+    font-weight: bold;
 }
 
 /*** footer ***/

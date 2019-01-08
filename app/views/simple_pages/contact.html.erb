@@ -5,21 +5,28 @@
     </div>
 </div>
 
-<div class="row section-contact">
-  <div id="contactInfo" class="page_body contact-info">
-    <div class="email contact-info-spacer">
-      <i class="fas fa-envelope"></i>
-      <a href="mailto:phillip.n.patrick@gmail.com">phillip.n.patrick@gmail.com</a>
-    </div><!-- end email -->
+<%= flash[:notice] %>
 
-    <div class="physical-address contact-info-spacer">
-      <i class="fas fa-map-marker"></i>
-      15561 W 64th Pl Unit C | Arvada, CO 80007
-    </div><!-- end physical-address -->
-
-    <div class="phone contact-info-spacer">
-      <i class="fas fa-mobile-alt"></i>
-      <a href="tel:+18042413035">804.241.3035</a>
-    </div><!-- end phone -->
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+<div class="row email-form-space">
+  <div class="col-md-6 col-lg-6">
+    <%= image_tag("contact.jpg", class: "img-fluid img-contact") %>
+  </div>
+  <div class="col-md-6 col-lg-6 email-form">
+    <h4>Contact Us</h4>
+    <div class="form-group email-form-group">
+      <%= form.label :name, class: "email-form-label" %>
+      <%= form.text_field :name, class: "form-control", placeholder:"Your name" %>
+    </div>
+    <div class="form-group email-form-group">
+      <%= form.label :email, class: "email-form-label" %>
+      <%= form.text_field :email, class: "form-control", placeholder:"Your email address" %>
+    </div>
+    <div class="form-group email-form-group">
+      <%= form.label :message, class: "email-form-label" %>
+      <%= form.text_area :message, class: "form-control", placeholder:"Your message", rows: 5 %>
+    </div>
+    <%= form.submit "Send", class: "btn btn-success btn-email-send" %>
+    <% end %>
   </div>
 </div>
