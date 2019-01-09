@@ -93,5 +93,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'pnpcfproject.herokuapp.com' }
+  config.action_mailer.asset_host = 'pnpcfproject.herokuapp.com'
 
 end
