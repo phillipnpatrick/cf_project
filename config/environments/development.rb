@@ -63,4 +63,6 @@ Rails.application.configure do
     ActiveRecord::Base.logger = Logger.new(STDOUT)
     ActiveRecord::Base.logger.level = 0 # at any time
   end
+  
+  config.action_mailer.default_url_options = { host: '48309ff0090c4b268b7f05623ea72d86.vfs.cloud9.us-east-2.amazonaws.com' }
 end

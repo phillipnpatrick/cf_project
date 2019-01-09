@@ -5,9 +5,7 @@
         
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <%= puts "Size is #{@products.size}" %>
-            <% @products.size.times do |index| %>
-              <%= puts "IMPORTANT index = #{index}" %> 
+            <% @products.size.times do |index| %> 
               <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= "active" if index == 0%>"></li>
             <% end %>
           </ol>
