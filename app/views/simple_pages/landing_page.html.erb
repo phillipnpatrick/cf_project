@@ -5,10 +5,11 @@
         
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <%= puts "Size is #{@products.size}" %>
+            <% @products.size.times do |index| %>
+              <%= puts "IMPORTANT index = #{index}" %> 
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= "active" if index == 0%>"></li>
+            <% end %>
           </ol>
           <div class="carousel-inner">
               <% @products.each do |product| %>
