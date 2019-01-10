@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.label :first_name, class: "sr-only" %>
+    <%= form.text_field :first_name, autofocus: true, required: true, class: "form-control user-control", placeholder: "First name" %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.label :last_name, class: "sr-only" %>
+    <%= form.text_field :last_name, required: true, class: "form-control user-control", placeholder: "Last name" %>
   </div>
 
   <div class="actions">

@@ -99,8 +99,12 @@
     </nav>
 
     <section class="page-body">
-      <div class="notice"><%= notice %></div>
-      <div class="alert"><%= alert %></div>
+      <% if notice %>
+        <div id="notice" class="alert alert-primary"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div id="alert" class="alert alert-danger"><%= alert %></div>
+      <% end %>
       <%= yield %>
     </section>
     

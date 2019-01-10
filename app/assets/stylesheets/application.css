@@ -16,3 +16,12 @@
 div:empty {
   display:none;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.alert {
+  font-size: 16pt;
+  font-weight: bold;
+}

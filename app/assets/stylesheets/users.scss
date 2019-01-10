@@ -14,10 +14,6 @@
     max-width: 400px;
 }
 
-.hdr-user {
-    font-weight: bold;
-}
-
 .hdr-cancel {
     margin-top: 15px;
 }
@@ -35,11 +31,6 @@
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
-}
-
-.user-links a {
-    font-weight: bold;
-    font-size: 12pt;
 }
 
 .user-login {
@@ -70,20 +61,10 @@
     margin: 0 auto;
 }
 
-.user-links-back a {
-    font-weight: bold;
-    font-size: 12pt;
-}
-
 .forgot-links {
     max-width: 400px;
     padding: 5px;
     margin: 0 auto;
-}
-
-.forgot-links a {
-    font-weight: bold;
-    font-size: 12pt;
 }
 
 .forgot-login {
@@ -93,4 +74,38 @@
 .passwords-sign-up {
     float: right;
     padding-right: 45px;
+}
+
+.user-control {
+    width: 330px;
+}
+
+.user-link-section {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+#tblUsers {
+    font-family: 'Life Savers', cursive;
+    font-size: 14pt;
+    border-collapse: collapse;
+}
+
+#tblUsers td, #tblUsers th {
+    border: 1px solid black;
+    padding: 8px;
+    font-family: 'Life Savers', cursive;
+    font-weight: bold;
+}
+
+#tblUsers tr:nth-child(even){background-color: steelblue;}
+
+#tblUsers tr:hover {background-color: linen;}
+
+#tblUsers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
 }
