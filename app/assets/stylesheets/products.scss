@@ -41,3 +41,44 @@
     font-size: 14pt;
     font-weight: bold;
 }
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.thumbnail img{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+}
+
+.comment {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.comment-icon {
+    padding-right: 10px;
+}
+
+.author h5 {
+    font-size: 1rem;
+}
+
+.rating p {
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+}
+
+.comment-body p {
+    font-family: Helvetica, sans-serif;
+}
