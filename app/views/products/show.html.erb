@@ -10,7 +10,9 @@
     <h1 class="product-title"><%= @product.name %></h1>
     <hr>
     <p class="product-price">Price: $<%= @product.price %></p>
-    <p class="product-description"><%= @product.description %></p>    
+    <p class="product-description"><%= @product.description %></p>
+    <p class="product-rating">Averate rating: <%= @product.average_rating %></p>
+    <!--<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>-->
   </div>
 </div>
 

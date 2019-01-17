@@ -18,12 +18,10 @@
             </h5>
           </div>
           
-          <div class="rated" data-score="<%= comment.rating %>">
-              
+          <!--<div class="rated" data-score="<%= comment.rating %>"></div>-->
+          <div class="customer-rating">
+            <%= "Rating: #{comment.rating}/5" %>
           </div>
-          <!--<div class="customer-rating">-->
-          <!--  <%= "Rating: #{comment.rating}/5" %>-->
-          <!--</div>-->
           
           <div class="comment-body">
             <p><%= comment.body %></p>
