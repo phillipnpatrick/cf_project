@@ -74,11 +74,22 @@
     font-size: 1rem;
 }
 
-.rating p {
+.customer-rating {
     font-weight: bold;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Life Savers', cursive;
+    margin-bottom: 5px;
 }
 
 .comment-body p {
     font-family: Helvetica, sans-serif;
+}
+
+.comment-lbl {
+    font-weight: bold;
+    font-family: 'Life Savers', cursive;
+    // display: inline;
+}
+
+.rating {
+    display: inline;
 }
