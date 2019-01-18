@@ -1,5 +1,8 @@
 <% if signed_in? %>
+    <hr>
+    
     <h4>Add a review:</h4>
+    
     <%= form_for([@product, @product.comments.build]) do |f| %>
         <div class="field">
           <%= f.label :body, "Comments:", class: "comment-lbl" %>
@@ -16,4 +19,5 @@
             <%= f.submit "Submit", class: "btn btn-sm btn-primary" %>
         </div>
     <% end %>
+    
 <% end %>

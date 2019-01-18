@@ -6,6 +6,10 @@
     padding-bottom: 50px;
 }
 
+.product-label {
+    font-weight: bold;
+}
+
 .product-special {
     color: white !important;
 }
@@ -58,6 +62,10 @@
     max-width: 100%;
 }
 
+.product-reviews {
+    margin-bottom: 50px;
+}
+
 .comment {
     border-style: solid;
     border-width: 1px;
@@ -91,4 +99,14 @@
 }
 
 .rating {
+}
+
+.pagination {
+    font-family: Helvetica, sans-serif;
+    color: blue;
+    margin-bottom: 5px;
+}
+
+.page-entries {
+    font-family: Helvetica, sans-serif;
 }

@@ -1,3 +1,4 @@
+<hr>
 <h6 class="product-title">Customer Reviews</h6>
 
 <div class="product-reviews">
@@ -29,4 +30,15 @@
             
         </div>
     <% end %>
+    
+    <hr>
+    
+    <!-- see ProductsController to change the number of comments shown -->
+    <%= will_paginate @comments, 
+      previous_label:"<< Previous",
+      next_label: "Next >>",
+      link_separator: "&nbsp;&nbsp;&nbsp;&nbsp;" %>
+      
+    <div class="page-entries text-muted"><%= page_entries_info @comments %></div>
+    
 </div>
