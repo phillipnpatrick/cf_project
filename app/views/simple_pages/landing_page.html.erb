@@ -11,12 +11,14 @@
           </ol>
           <div class="carousel-inner">
               <% @products.each do |product| %>
-                <div class="carousel-item <%= " active" if product == @products.first%>">
+                <%= link_to(product) do %>
+                  <div class="carousel-item <%= " active" if product == @products.first%>">
                     <div class="carousel-caption d-none d-md-block">
                       <h2 class="product-title"><%= product.name %></h2>
                     </div>
                     <%= image_tag(product.image_url, class: "img-responsive product-img carousel-img") %>
-                </div>
+                  </div>
+                <% end %>
               <% end %>
           </div>
         

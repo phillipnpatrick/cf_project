@@ -33,11 +33,15 @@
     font-weight: bold;
 }
 
-.product-text {
+.product-text, .product-links, .product-links a {
     color: mediumslateblue;
     font-family: 'Life Savers', cursive;
     font-size: 14pt;
     font-weight: bold;
+}
+
+.product-all-users, .product-admin {
+    display: inline;
 }
 
 .product-price, .product-rating {
@@ -109,4 +113,14 @@
 
 .page-entries {
     font-family: Helvetica, sans-serif;
+}
+
+.comment-admin {
+    margin-left: 10px;
+    color: red;
+    display: inline;
+}
+
+.comment-admin a {
+    color: red;
 }

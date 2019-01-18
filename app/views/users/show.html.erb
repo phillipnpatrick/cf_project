@@ -1,14 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+<div class="user-show">
+  <div class="field">
+    <h5 class="inline">First name:</h5>
+    <div class="user-field inline">
+      <%= @user.first_name %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <h5 class="inline">Last name:</h5>
+    <div class="user-field inline">
+      <%= @user.last_name %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <h5 class="inline">Email:</h5>
+    <div class="user-field inline">
+      <%= @user.email %>
+    </div>
+  </div>
+</div>
 
 <div class="user-link-section">
   <%= link_to 'Edit', edit_user_path(@user) %> |

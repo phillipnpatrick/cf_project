@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Users</h1>
 
 <table id="tblUsers">
@@ -7,6 +5,7 @@
     <tr>
       <th>First name</th>
       <th>Last name</th>
+      <th>Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +15,18 @@
       <tr>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if signed_in? && current_user.email == user.email %>
+            <%= link_to 'Edit', edit_user_path(user) %>
+          <% end %>
+        </td>
+        <td>
+          <% if signed_in? && current_user.email == user.email %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +34,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<% if signed_in? && current_user.admin? %>
+  <%= link_to 'New User', new_user_path %>
+<% end %>

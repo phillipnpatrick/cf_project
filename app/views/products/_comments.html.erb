@@ -16,6 +16,11 @@
                         <%= "#{time_ago_in_words(comment.created_at)} ago" %>
                     </em>
                 </small>
+                <% if signed_in? && current_user.admin? %>
+                  <div class="comment-admin">
+                    <%= link_to ('<i class="fas fa-trash"></i>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                <% end %>
             </h5>
           </div>
           
