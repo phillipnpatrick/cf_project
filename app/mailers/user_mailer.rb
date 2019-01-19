@@ -19,4 +19,9 @@ class UserMailer < ApplicationMailer
         @appname = "Home Knits"
         mail(to: user.email, subject: "Order confirmation from the #{@appname} online store")
     end
+    
+    def welcome(user)
+        @appname = "Home Knits"
+        mail(to: user.email, subject: "Welcome to #{@appname}!")
+    end
 end
