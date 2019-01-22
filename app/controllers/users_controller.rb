@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
   load_and_authorize_resource
-
+  
   # GET /users
   # GET /users.json
   def index
@@ -12,6 +12,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if (signed_in? && current_user.id != @user.id && !current_user.admin?)
+      redirect_to products_url, alert: 'Unauthorized access'
+    elsif (!signed_in?)
+      redirect_to new_user_session_path
+    end
   end
 
   # GET /users/new

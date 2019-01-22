@@ -1,29 +1,29 @@
-<div class="user-show">
-  <div class="field">
-    <h5 class="inline">First name:</h5>
-    <div class="user-field inline">
-      <%= @user.first_name %>
+<% if (current_user.id == @user.id) || current_user.admin? %>
+  <div class="user-show">
+    <div class="field">
+      <h5 class="inline">First name:</h5>
+      <div class="user-field inline">
+        <%= @user.first_name %>
+      </div>
+    </div>
+    
+    <div class="field">
+      <h5 class="inline">Last name:</h5>
+      <div class="user-field inline">
+        <%= @user.last_name %>
+      </div>
+    </div>
+    
+    <div class="field">
+      <h5 class="inline">Email:</h5>
+      <div class="user-field inline">
+        <%= @user.email %>
+      </div>
     </div>
   </div>
   
-  <div class="field">
-    <h5 class="inline">Last name:</h5>
-    <div class="user-field inline">
-      <%= @user.last_name %>
-    </div>
-  </div>
-  
-  <div class="field">
-    <h5 class="inline">Email:</h5>
-    <div class="user-field inline">
-      <%= @user.email %>
-    </div>
-  </div>
-</div>
-
-<div class="user-link-section">
-  <% if (signed_in? && current_user.email == user.email) || current_user.admin? %>
+  <div class="user-link-section">
     <%= link_to 'Edit', edit_user_path(@user) %>&nbsp;|&nbsp;
-  <% end %>
-  <%= link_to 'Back', users_path %>
-</div>
+    <%= link_to 'Back', users_path %>
+  </div>
+<% end %>
