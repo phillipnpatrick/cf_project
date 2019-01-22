@@ -1,11 +1,8 @@
 require 'rails_helper'
 
 describe Product do
-    let(:product) { Product.create!(name: "fancy afghan") }
-        # create! will raise an exception
-        # create! is a combo of .new and .save!
-        
-    let(:user) { User.create!(email: "harry.potter@hogwarts.edu", password: "goldensnitch") }
+    product = FactoryBot.create(:product)
+    user = FactoryBot.create(:user)
     
     before do
         product.comments.create!(rating: 1, user: user, body: "Cheap yarn!")

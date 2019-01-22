@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Product do
-    let(:product) { Product.create!(name: "fancy afghan") }
-    let(:user) { User.create!(email: "harry.potter@hogwarts.edu", password: "goldensnitch") }
+    product = FactoryBot.build(:product)
+    user = FactoryBot.create(:user)
     
     it "is valid with a product and a user" do
         expect(Order.new(product: product, user: user)).to be_valid

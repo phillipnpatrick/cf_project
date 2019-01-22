@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Product do
-    let(:product) { Product.create!(name: "fancy afghan") }
-    let(:user) { User.create!(email: "harry.potter@hogwarts.edu", password: "goldensnitch") }
+    product = FactoryBot.build(:product)
+    user = FactoryBot.create(:user)
     
     it "is valid with a product, user, body and rating present" do
         expect(Comment.new(product: product, user: user, body: "Awesome!", rating: 5)).to be_valid

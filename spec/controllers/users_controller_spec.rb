@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 describe UsersController, type: :controller do
-    let(:user_hermione) { User.create!(email: "hermione.granger@hogwarts.edu", password: "leviosa") }
-    let(:user_ron) { User.create!(email: "ron.weasley@hogwarts.edu", password: "ihatespiders!") }
-    let(:user_dumbledore) { User.create!(email: "albus.dumbledore@hogwarts.edu", password: "elderwand", admin: true, first_name: "Albus", last_name: "Dumbledore") }
+    #build: does not create a record in the database
+    #create: creates a user in the database
+    
+    user_hermione = FactoryBot.create(:user)
+    user_ron = FactoryBot.create(:user)
+    user_dumbledore = FactoryBot.create(:admin)
     
     describe 'GET #show' do
         context 'when a user is logged in' do
