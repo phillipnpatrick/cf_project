@@ -1,0 +1,16 @@
+<h2 class="center">Thank you for your purchase!</h2>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <%= image_tag(Product.find(params[:product_id]).image_url) %>
+    </a>
+  </div>
+  <div class="col-xs-6 col-md-9">
+    <h1 class="product-title"><%= Product.find(params[:product_id]).name %></h1>
+    <hr>
+    <p class="product-price">Price: $<%= Product.find(params[:product_id]).price %></p>
+    <p class="product-description"><%= Product.find(params[:product_id]).description %></p>
+    <p class="product-rating">Averate rating: <%= Product.find(params[:product_id]).average_rating %></p>
+  </div>
+</div>
