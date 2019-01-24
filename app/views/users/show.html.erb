@@ -1,20 +1,20 @@
 <% if (current_user.id == @user.id) || current_user.admin? %>
   <div class="user-show">
-    <div class="field">
+    <div class="form-group">
       <h5 class="inline">First name:</h5>
       <div class="user-field inline">
         <%= @user.first_name %>
       </div>
     </div>
     
-    <div class="field">
+    <div class="form-group">
       <h5 class="inline">Last name:</h5>
       <div class="user-field inline">
         <%= @user.last_name %>
       </div>
     </div>
     
-    <div class="field">
+    <div class="form-group">
       <h5 class="inline">Email:</h5>
       <div class="user-field inline">
         <%= @user.email %>

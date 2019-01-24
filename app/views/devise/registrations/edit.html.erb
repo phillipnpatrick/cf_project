@@ -4,7 +4,7 @@
       <%= devise_error_messages! %>
       <h2 class="form-signin-heading">Edit <%= resource_name.to_s.humanize %></h2>
     
-      <div class="field">
+      <div class="form-group">
         <%= f.label :email, class: "sr-only" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: "form-control", placeholder: "Email address" %>
       </div>
@@ -13,7 +13,7 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     
-      <div class="field">
+      <div class="form-group">
         <%= f.label :password, class: "sr-only" %>
         <%= f.password_field :password, autocomplete: "new-password", required: true, class: "form-control", placeholder: "Password" %>
         <i class="user-password">leave blank if you don't want to change it</i>
@@ -22,13 +22,13 @@
         <% end %>
       </div>
     
-      <div class="field">
+      <div class="form-group">
         <%= f.label :password_confirmation, class: "sr-only" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true, class: "form-control", placeholder: "Confirm new password" %>
         <i class="user-password">retype your new password</i>
       </div>
     
-      <div class="field">
+      <div class="form-group">
         <%= f.label :current_password, class: "sr-only" %>
         <%= f.password_field :current_password, autocomplete: "current-password", required: true, class: "form-control", placeholder: "Current password" %>
         <i class="user-password">we need your current password to confirm your changes</i>

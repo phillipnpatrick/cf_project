@@ -5,10 +5,10 @@ class Product < ApplicationRecord
     
     def self.search(original_url, search_term)
         
-        if original_url.include?("amazonaws.com")
-            Product.where("name LIKE ?", "%#{search_term}%")
-        else
+        if Rails.env.production?
             Product.where("name ilike ?", "%#{search_term}%")
+        else
+            Product.where("name LIKE ?", "%#{search_term}%")
         end
         
     end
