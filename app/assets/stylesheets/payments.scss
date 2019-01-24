@@ -1,3 +1,31 @@
 // Place all the styles related to the payments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-link {
+    background-color: #1275ff;
+    color: white;
+    padding:10px 10px 10px 10px;
+    border:1px solid gray;
+    border-radius:5px;
+    color:#fff;
+    margin-right:10px;
+    text-decoration: none;
+    background: #1275ff;
+    background-image: linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);
+    font-weight: bold;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.login-link a:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+.login-link a:active {
+  background-color: black;
+}
+
+.login-link a:visited {
+  background-color: #ccc;
+}

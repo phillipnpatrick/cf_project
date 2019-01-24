@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}, 
-    controllers: { registrations: "user_registrations" }
-  
+    controllers: { registrations: "user_registrations", sessions: 'users/sessions', passwords: 'users/passwords' }
+
   resources :products do
     resources :comments
   end
@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   
   get 'payments/create'
   post 'payments/create'
+  
 end

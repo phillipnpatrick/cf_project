@@ -11,9 +11,14 @@
     <p class="product-description"><%= @product.description %></p>
     <p class="product-rating">Averate rating: <%= @product.average_rating %></p>
     <!--<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>-->
-    <%= form_with(url: '/payments/create') do |form| %>
-      <%= render partial: "shared/stripe_checkout_button" %>
-      <%= hidden_field_tag(:product_id, @product.id) %>
+    <% if signed_in?  %>
+      <%= form_with(url: '/payments/create') do |form| %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+      <% end %>
+    <% else%>
+      <br>
+      <%= link_to('Login to purchase', new_user_session_path(:redirect_to => request.original_url), class: "login-link") %>
     <% end %>
   </div>
 </div>
