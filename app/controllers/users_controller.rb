@@ -6,7 +6,16 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if (signed_in?)
+      if (current_user.admin?)
+        @users = User.all
+      else
+        # User.where(["name = ? and email = ?", "Joe", "joe@example.com"])
+        @users = User.where(["id = ?", current_user.id])
+      end
+    else
+      redirect_to products_url, alert: 'Unauthorized access' 
+    end
   end
 
   # GET /users/1
@@ -21,11 +30,18 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if (signed_in? && current_user.admin?)
+      @user = User.new
+    else
+      redirect_to products_url, alert: 'Unauthorized access'
+    end
   end
 
   # GET /users/1/edit
   def edit
+    if (!signed_in? || !current_user.admin?)
+      redirect_to products_url, alert: 'Unauthorized access'
+    end
   end
 
   # POST /users
