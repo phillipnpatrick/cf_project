@@ -1,4 +1,4 @@
-<% if (current_user.id == @user.id) || current_user.admin? %>
+<% if (current_user != nil ) && ((current_user.id == @user.id) || current_user.admin?) %>
   <div class="user-show">
     <div class="form-group">
       <h5 class="inline">First name:</h5>

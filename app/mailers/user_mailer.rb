@@ -2,11 +2,11 @@ class UserMailer < ApplicationMailer
     default from: "from@homeknits.com"
 
     def contact_form(email, name, message)
-        # puts "DEBUG: Inside contact_form method"
+        logger.debug "Inside contact_form method"
         
-        # puts "DEBUG: name is #{name}"
-        # puts "DEBUG: email is #{email}"
-        # puts "DEBUG: message is #{message}"
+        logger.debug "name is #{name}"
+        logger.debug "email is #{email}"
+        logger.debug "message is #{message}"
         
         @message = message
         @subject = "Home Knits message from #{name}"

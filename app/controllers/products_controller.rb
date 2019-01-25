@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      puts "request.original_url is #{request.original_url}"
+      logger.debug "request.original_url is #{request.original_url}"
       @products = Product.search(request.original_url, search_term)
     else
       @products = Product.all
