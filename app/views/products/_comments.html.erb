@@ -1,36 +1,9 @@
 <hr>
 <h6 class="product-title">Customer Reviews</h6>
 
-<div class="product-reviews">
+<div id="product_reviews" class="product-reviews">
     <% @comments.each do |comment| %>
-        <div>
-          
-          <hr>
-          
-          <div class="author">
-            <h5>
-                <i class="far fa-comment comment-icon"></i>
-                <%= comment.user.first_name %>
-                <small>
-                    <em>
-                        <%= "#{time_ago_in_words(comment.created_at)} ago" %>
-                    </em>
-                </small>
-                <% if signed_in? && current_user.admin? %>
-                  <div class="comment-admin">
-                    <%= link_to ('<i class="fas fa-trash"></i>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div>
-                <% end %>
-            </h5>
-          </div>
-          
-          <div class="rated" data-score="<%= comment.rating %>"></div>
-          
-          <div class="comment-body">
-            <p><%= comment.body %></p>
-          </div>
-            
-        </div>
+        <%= render comment %>  <!-- see views/comments/_comment.html.erb --> 
     <% end %>
     
     <hr>
@@ -41,6 +14,6 @@
       next_label: "Next >>",
       link_separator: "&nbsp;&nbsp;&nbsp;&nbsp;" %>
       
-    <div class="page-entries text-muted"><%= page_entries_info @comments %></div>
+    <div id="page-entries" class="page-entries text-muted"><%= page_entries_info @comments %></div>
     
 </div>
