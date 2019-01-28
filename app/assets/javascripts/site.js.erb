@@ -1,25 +1,45 @@
-$(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load ajaxSuccess', function(){
 
-    var $j = jQuery.noConflict(); // https://www.w3schools.com/jquery/jquery_noconflict.asp
+  var $j = jQuery.noConflict(); // https://www.w3schools.com/jquery/jquery_noconflict.asp
     
-    $("#product_img").elevateZoom({});
+  $("#product_img").elevateZoom();
 
-    $('.rating').raty({});
-    
-    $('.rating').raty({
-      starHalf: '<%= asset_path 'star-half.png' %>',
-      starOff: '<%= asset_path 'star-off.png' %>',
-      starOn: '<%= asset_path 'star-on.png' %>',
-      scoreName: 'comment[rating]'
-    });
-    
-    $('.rated').raty({
-      starHalf: '<%= asset_path 'star-half.png' %>',
-      starOff: '<%= asset_path 'star-off.png' %>',
-      starOn: '<%= asset_path 'star-on.png' %>',
-      readOnly: true,
-      score: function() {
-        return $(this).attr('data-score');
-      }
-    });
+  refreshRating();
+  
+  <!--initializeCustomerFormRating();-->
+  
+  <!--refreshProductAverageRating();-->
 });
+
+var refreshRating = function () {
+
+  initializeCustomerFormRating();
+  
+  refreshProductAverageRating();
+  
+};
+
+var initializeCustomerFormRating = function() {
+  <!-- individual rating for user comment/review -->
+  
+  $('.rating').raty({
+    starHalf: '<%= asset_path 'star-half.png' %>',
+    starOff: '<%= asset_path 'star-off.png' %>',
+    starOn: '<%= asset_path 'star-on.png' %>',
+    scoreName: 'comment[rating]'
+  });
+};
+
+var refreshProductAverageRating = function() {
+  <!-- average rating for product -->
+    
+  $('.rated').raty({
+    starHalf: '<%= asset_path 'star-half.png' %>',
+    starOff: '<%= asset_path 'star-off.png' %>',
+    starOn: '<%= asset_path 'star-on.png' %>',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+};

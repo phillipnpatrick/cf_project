@@ -1,0 +1,9 @@
+$("#comment_form").hide();
+
+$("#product_reviews").prepend("<%= j render @comment %>");
+
+refreshRating();
+
+$('#average-rating').raty('readOnly', false);
+$('#average-rating').raty('score', "<%= @product.average_rating %>");
+$('#average-rating').raty('readOnly', true);
