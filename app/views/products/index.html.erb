@@ -2,7 +2,9 @@
 
 <div class="container-fluid">
   <div class="row">
-    <%= render @products %> <!-- see _product.html.erb for html -->
+    <% cache(cache_key_for_products) do %>
+      <%= render @products %> <!-- see _product.html.erb for html -->
+    <% end %>
   </div>
 </div>
 
