@@ -26,6 +26,6 @@
 
 <br>
 
-<% if signed_in? && current_user.admin? %>
+<% if user_signed_in? && current_user.admin? %>
   <%= link_to 'New User', new_user_path %>
 <% end %>

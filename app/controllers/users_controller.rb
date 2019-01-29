@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if (signed_in?)
+    if (user_signed_in?)
       if (current_user.admin?)
         @users = User.all
       else
@@ -21,16 +21,16 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if (signed_in? && current_user.id != @user.id && !current_user.admin?)
+    if (user_signed_in? && current_user.id != @user.id && !current_user.admin?)
       redirect_to products_url, alert: 'Unauthorized access'
-    elsif (!signed_in?)
+    elsif (!user_signed_in?)
       redirect_to new_user_session_path
     end
   end
 
   # GET /users/new
   def new
-    if (signed_in? && current_user.admin?)
+    if (user_signed_in? && current_user.admin?)
       @user = User.new
     else
       redirect_to products_url, alert: 'Unauthorized access'
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if (!signed_in? || !current_user.admin?)
+    if (!user_signed_in? || !current_user.admin?)
       redirect_to products_url, alert: 'Unauthorized access'
     end
   end
