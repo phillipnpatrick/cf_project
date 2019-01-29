@@ -4,6 +4,8 @@ class SimplePagesController < ApplicationController
   
   def landing_page
     @products = Product.limit(5)
+    
+    # $redis.set("carousel-items", @products.size) #Error connecting to Redis on localhost:6379 (Errno::ECONNREFUSED)
   end
   
   def thank_you
