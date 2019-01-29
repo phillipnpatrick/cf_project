@@ -1,7 +1,10 @@
 <div class="text-with-image">
     <%= image_tag("knits/knitting.jpg", class: "img-responsive img-wrap") %>
     <div>
-        <h1 class="hdr">About Home Knits</h1>
+        <% cache do %>
+            <% sleep 2 %>
+            <h1 class="hdr">About Home Knits</h1>
+        <% end %>
         <div class="about-text">
             <p>All of our products are hand-knitted and made from high-quality yarn.</p>
             <p>Our knitters carefully decide which colors to use in each product to create the warmth and comfort of home.</p>

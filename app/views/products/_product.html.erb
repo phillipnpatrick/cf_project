@@ -1,21 +1,23 @@
 <div class="col-sm-3 col-md-3 product">
-    <h2 class="product-title"><%= product.name %></h2>
+    <% cache product do %>
+        <h2 class="product-title"><%= product.name %></h2>
+        
+        <%= link_to(product) do %>
+            <%= image_tag(product.image_url, class: "img-responsive product-img") %>
+        <% end %>
+        
+        <p class="product-description"><%= product.description %></p>
+        <p class="product-price">Price: $<%= product.price %></p>
+        
+        <hr>
     
-    <%= link_to(product) do %>
-        <%= image_tag(product.image_url, class: "img-responsive product-img") %>
-    <% end %>
-    
-    <p class="product-description"><%= product.description %></p>
-    <p class="product-price">Price: $<%= product.price %></p>
-    
-    <hr>
-
-    <div class="product-links">
-        <div class="product-admin">
-            <% if signed_in? && current_user.admin? %>
-                <%= link_to 'Edit', edit_product_path(product) %> | 
-                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
+        <div class="product-links">
+            <div class="product-admin">
+                <% if signed_in? && current_user.admin? %>
+                    <%= link_to 'Edit', edit_product_path(product) %> | 
+                    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+            </div>
         </div>
-    </div>
+    <% end %>
 </div>
