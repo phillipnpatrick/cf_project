@@ -103,4 +103,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'pnpcfproject.herokuapp.com' }
   config.action_mailer.asset_host = 'pnpcfproject.herokuapp.com'
 
+  config.web_socket_server_url = "wss://pnpcfproject.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://pnpcfproject.herokuapp.com', 'http://pnpcfproject.herokuapp.com']
+
 end

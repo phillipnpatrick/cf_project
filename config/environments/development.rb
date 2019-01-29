@@ -66,4 +66,6 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: '48309ff0090c4b268b7f05623ea72d86.vfs.cloud9.us-east-2.amazonaws.com' }
   config.action_mailer.asset_host = 'http://48309ff0090c4b268b7f05623ea72d86.vfs.cloud9.us-east-2.amazonaws.com'
+
+  config.app_generators.javascript_engine = :javascript
 end
