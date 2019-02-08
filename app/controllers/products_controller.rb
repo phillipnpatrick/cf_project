@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    if (user_signed_in? && current_user.admin?)
+    if (current_user && current_user.admin?)
       @product = Product.new
     else
       redirect_to products_url, alert: 'Unauthorized access' 
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    if (!user_signed_in? || !current_user.admin?)
+    if (!current_user || !current_user.admin?)
       redirect_to products_url, alert: 'Unauthorized access'
     end
   end
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    if (user_signed_in? && current_user.admin?)
+    if (current_user && current_user.admin?)
       @product = Product.new(product_params)
   
       respond_to do |format|
@@ -58,7 +58,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    if (user_signed_in? && current_user.admin?)
+    if (current_user && current_user.admin?)
       respond_to do |format|
         if @product.update(product_params)
           format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -76,7 +76,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    if (user_signed_in? && current_user.admin?)
+    if (current_user && current_user.admin?)
       @product.destroy
       respond_to do |format|
         format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }

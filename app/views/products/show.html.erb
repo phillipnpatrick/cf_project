@@ -11,7 +11,7 @@
       <p class="product-price">Price: $<%= @product.price %></p>
       <p class="product-description"><%= @product.description %></p>
       <p class="product-price">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div></p>
-      <% if user_signed_in?  %>
+      <% if current_user  %>
         <%= form_with(url: '/payments/create') do |form| %>
           <%= render partial: "shared/stripe_checkout_button" %>
           <%= hidden_field_tag(:product_id, @product.id) %>
@@ -31,7 +31,7 @@
 <%= render 'comments' %>
 
 <div>
-  <% if user_signed_in? && current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <%= link_to 'Edit', edit_product_path(@product) %> |
   <% end %>
   <%= link_to 'Back', products_path %>
