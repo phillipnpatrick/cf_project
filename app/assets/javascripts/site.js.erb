@@ -4,19 +4,15 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
     
   $("#product_img").elevateZoom();
 
-  refreshRating();
+  initRating();
+  
+  initRated();
 });
 
-var refreshRating = function () {
-
-  initializeCustomerFormRating();
-  
-  refreshProductAverageRating();
-  
-};
-
-var initializeCustomerFormRating = function() {
+var initRating = function() {
   <!-- individual rating for user comment/review -->
+  
+  <!--console.log("initRating");-->
   
   $('.rating').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
@@ -26,9 +22,11 @@ var initializeCustomerFormRating = function() {
   });
 };
 
-var refreshProductAverageRating = function() {
+var initRated = function() {
   <!-- average rating for product -->
     
+  <!--console.log("initRated");-->
+  
   $('.rated').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
     starOff: '<%= asset_path 'star-off.png' %>',
