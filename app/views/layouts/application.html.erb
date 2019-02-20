@@ -21,6 +21,24 @@
     <!-- For mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/knits/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/knits/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/knits/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/knits/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/knits/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/knits/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/knits/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/knits/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/knits/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/knits/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/knits/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/knits/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/knits/favicon-16x16.png">
+    <!--<link rel="manifest" href="/assets/knits/manifest.json">-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/knits/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
     <%= csrf_meta_tags %>
   </head>
 
@@ -76,7 +94,7 @@
                 <%= link_to "Contact", simple_pages_contact_path, class: "nav-link" %>
               <% end %>
             </li> 
-            <% if user_signed_in? %>
+            <% if current_user %>
               <li class="nav-item">
                 <%= link_to('Logout', destroy_user_session_path(:redirect_to => request.original_url), method: :delete, class: "nav-link") %>
               </li>
