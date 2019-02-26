@@ -14,14 +14,20 @@ class Product < ApplicationRecord
     end
     
     def highest_rating_comment
-        comments.rating_desc.first
+        # Rails.cache.fetch([cache_key, __method__], expires_in: 30.minutes) do
+            comments.rating_desc.first
+        # end
     end
     
     def lowest_rating_comment
-        comments.rating_asc.first
+        # Rails.cache.fetch([cache_key, __method__], expires_in: 30.minutes) do
+            comments.rating_asc.first
+        # end
     end
     
     def average_rating
-        comments.average(:rating).to_f
+        # Rails.cache.fetch([cache_key, __method__], expires_in: 30.minutes) do
+            comments.average(:rating).to_f
+        # end
     end
 end

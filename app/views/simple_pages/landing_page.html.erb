@@ -10,18 +10,17 @@
             <% end %>
           </ol>
           <div class="carousel-inner">
-              <% @products.each do |product| %>
-                <%= link_to(product) do %>
-                  <div class="carousel-item <%= " active" if product == @products.first%>">
-                    <div class="carousel-caption d-none d-md-block">
+            <% @products.each do |product| %>
+              <div class="carousel-item <%= " active" if product == @products.first%>">
+                <div class="carousel-caption d-none d-md-block">
+                  <%= link_to(product) do %>
                       <h2 class="product-title"><%= product.name %></h2>
-                    </div>
-                    <%= image_tag(product.image_url, class: "img-responsive product-img carousel-img") %>
-                  </div>
-                <% end %>
-              <% end %>
+                  <% end %>
+                </div>
+                <%= image_tag(product.image_url, class: "img-responsive product-img carousel-img") %>
+              </div>
+            <% end %>
           </div>
-        
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>

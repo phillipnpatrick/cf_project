@@ -68,4 +68,10 @@ Rails.application.configure do
   config.action_mailer.asset_host = 'http://48309ff0090c4b268b7f05623ea72d86.vfs.cloud9.us-east-2.amazonaws.com'
 
   config.app_generators.javascript_engine = :javascript
+  
+  config.cache_store = :redis_store, {
+    # expires_in: 1.hour,
+    namespace: 'cache',
+    redis: { host: 'localhost', port: 6379, db: 0 },
+  }
 end

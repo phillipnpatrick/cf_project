@@ -2,17 +2,19 @@ $(document).on('turbolinks:load', function() {
   App.product = App.cable.subscriptions.create("ProductChannel", {
     connected: function() {
       // Called when the subscription is ready for use on the server
+      console.log("ProductChannel connected");
       App.product.listen_to_comments();
     },
     
     disconnected: function() {
       // Called when the subscription has been terminated by the server
+      console.log("ProductChannel disconnected");
     },
     
     received: function(data) {
       // Called when there's incoming data on the websocket for this channel
       var score = data.average_rating;
-      // console.log("in product.js received function; data.average_rating = " + score);
+      console.log("ProductChannel received; data.average_rating = " + score);
       
       $(".alert.alert-info").show();
       
@@ -28,8 +30,7 @@ $(document).on('turbolinks:load', function() {
     
     listen_to_comments: function() {
       var x = $("[data-product-id]").data("product-id");
-      // console.log("hello from product.js listen_to_comments");
-      // console.log("product_id = " + x);
+      console.log("ProductChannel listen_to_comments; product_id = " + x);
       return this.perform('listen', {
         product_id: $("[data-product-id]").data("product-id")
       });
