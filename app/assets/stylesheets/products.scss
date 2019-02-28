@@ -18,6 +18,15 @@
     color: steelblue;
     font-family: 'Fredericka the Great', cursive;
     font-size: 20pt;
+    display: inline;
+}
+
+.product-views {
+    font-family: 'Life Savers', cursive;
+    font-size: 14pt;
+    font-weight: bold;
+    float: right;
+    padding-top: 15px;
 }
 
 .product-img {
@@ -59,9 +68,9 @@
     padding: 4px;
     margin-bottom: 20px;
     line-height: 1.42857143;
-    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
+    text-align: center;
 }
 
 .thumbnail img{
