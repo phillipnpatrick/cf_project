@@ -17,6 +17,18 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = @product.comments.order("created_at DESC").page(params[:page]).per_page(3)
+    
+    logger.debug "DEBUG: ProductsController->show"
+    @product = Product.find(params[:id])
+    
+    @current_product_views = $redis.get("product_#{@product.id}")
+    
+    if @current_product_views.nil?
+      logger.debug "DEBUG: ProductsController->show: @current_product_views was nil"
+      $redis.set("product_#{@product.id}", 1)
+    end
+    
+    $redis.incr("product_#{@product.id}")
   end
 
   # GET /products/new

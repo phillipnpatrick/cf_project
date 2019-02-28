@@ -7,6 +7,11 @@
     </div>
     <div class="col-xs-6 col-md-9">
       <h1 class="product-title"><%= @product.name %></h1>
+      <% if @current_product_views.blank? %>
+        <p class="product-views">Views: 1</p>
+      <% else %>
+        <p class="product-views">Views: <%= @current_product_views %></p>
+      <% end %>
       <hr>
       <p class="product-price">Price: $<%= @product.price %></p>
       <p class="product-description"><%= @product.description %></p>

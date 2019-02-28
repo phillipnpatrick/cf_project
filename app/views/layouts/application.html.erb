@@ -72,6 +72,17 @@
               <% end %>
             </li>
             <li class="nav-item">
+              <% if current_user && current_user.admin? %>
+                <% if request.original_url.end_with? orders_path %>
+                  <%= link_to(orders_path, class: "nav-link active") do %>
+                      Orders <span class="sr-only">(current)</span>
+                  <% end %>
+                <% else %>
+                  <%= link_to "Orders", orders_path, class: "nav-link" %>
+                <% end %>
+              <% end %>
+            </li>
+            <li class="nav-item">
               <% if request.original_url.end_with? simple_pages_about_path %>
                 <%= link_to(simple_pages_about_path, class: "nav-link active") do %>
                     About <span class="sr-only">(current)</span>
